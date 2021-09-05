@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generate.RepairRecordDao">
+  <resultMap id="BaseResultMap" type="generate.RepairRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="id_number" jdbcType="BIGINT" property="idNumber" />
+    <result column="id_name" jdbcType="VARCHAR" property="idName" />
+    <result column="id_faculty" jdbcType="VARCHAR" property="idFaculty" />
+    <result column="id_facultyclass" jdbcType="VARCHAR" property="idFacultyclass" />
+    <result column="bug" jdbcType="VARCHAR" property="bug" />
+    <result column="id_repairnumber" jdbcType="BIGINT" property="idRepairnumber" />
+    <result column="id_repairname" jdbcType="VARCHAR" property="idRepairname" />
+    <result column="repairtime" jdbcType="TIMESTAMP" property="repairtime" />
+    <result column="is_accomplished" jdbcType="BIT" property="isAccomplished" />
+    <result column="is_student" jdbcType="BIT" property="isStudent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, id_number, id_name, id_faculty, id_facultyclass, bug, id_repairnumber, id_repairname, 
+    repairtime, is_accomplished, is_student
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from repair_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from repair_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="generate.RepairRecord" useGeneratedKeys="true">
+    insert into repair_record (id_number, id_name, id_faculty, 
+      id_facultyclass, bug, id_repairnumber, 
+      id_repairname, repairtime, is_accomplished, 
+      is_student)
+    values (#{idNumber,jdbcType=BIGINT}, #{idName,jdbcType=VARCHAR}, #{idFaculty,jdbcType=VARCHAR}, 
+      #{idFacultyclass,jdbcType=VARCHAR}, #{bug,jdbcType=VARCHAR}, #{idRepairnumber,jdbcType=BIGINT}, 
+      #{idRepairname,jdbcType=VARCHAR}, #{repairtime,jdbcType=TIMESTAMP}, #{isAccomplished,jdbcType=BIT}, 
+      #{isStudent,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="generate.RepairRecord" useGeneratedKeys="true">
+    insert into repair_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idNumber != null">
+        id_number,
+      </if>
+      <if test="idName != null">
+        id_name,
+      </if>
+      <if test="idFaculty != null">
+        id_faculty,
+      </if>
+      <if test="idFacultyclass != null">
+        id_facultyclass,
+      </if>
+      <if test="bug != null">
+        bug,
+      </if>
+      <if test="idRepairnumber != null">
+        id_repairnumber,
+      </if>
+      <if test="idRepairname != null">
+        id_repairname,
+      </if>
+      <if test="repairtime != null">
+        repairtime,
+      </if>
+      <if test="isAccomplished != null">
+        is_accomplished,
+      </if>
+      <if test="isStudent != null">
+        is_student,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idNumber != null">
+        #{idNumber,jdbcType=BIGINT},
+      </if>
+      <if test="idName != null">
+        #{idName,jdbcType=VARCHAR},
+      </if>
+      <if test="idFaculty != null">
+        #{idFaculty,jdbcType=VARCHAR},
+      </if>
+      <if test="idFacultyclass != null">
+        #{idFacultyclass,jdbcType=VARCHAR},
+      </if>
+      <if test="bug != null">
+        #{bug,jdbcType=VARCHAR},
+      </if>
+      <if test="idRepairnumber != null">
+        #{idRepairnumber,jdbcType=BIGINT},
+      </if>
+      <if test="idRepairname != null">
+        #{idRepairname,jdbcType=VARCHAR},
+      </if>
+      <if test="repairtime != null">
+        #{repairtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAccomplished != null">
+        #{isAccomplished,jdbcType=BIT},
+      </if>
+      <if test="isStudent != null">
+        #{isStudent,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="generate.RepairRecord">
+    update repair_record
+    <set>
+      <if test="idNumber != null">
+        id_number = #{idNumber,jdbcType=BIGINT},
+      </if>
+      <if test="idName != null">
+        id_name = #{idName,jdbcType=VARCHAR},
+      </if>
+      <if test="idFaculty != null">
+        id_faculty = #{idFaculty,jdbcType=VARCHAR},
+      </if>
+      <if test="idFacultyclass != null">
+        id_facultyclass = #{idFacultyclass,jdbcType=VARCHAR},
+      </if>
+      <if test="bug != null">
+        bug = #{bug,jdbcType=VARCHAR},
+      </if>
+      <if test="idRepairnumber != null">
+        id_repairnumber = #{idRepairnumber,jdbcType=BIGINT},
+      </if>
+      <if test="idRepairname != null">
+        id_repairname = #{idRepairname,jdbcType=VARCHAR},
+      </if>
+      <if test="repairtime != null">
+        repairtime = #{repairtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAccomplished != null">
+        is_accomplished = #{isAccomplished,jdbcType=BIT},
+      </if>
+      <if test="isStudent != null">
+        is_student = #{isStudent,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="generate.RepairRecord">
+    update repair_record
+    set id_number = #{idNumber,jdbcType=BIGINT},
+      id_name = #{idName,jdbcType=VARCHAR},
+      id_faculty = #{idFaculty,jdbcType=VARCHAR},
+      id_facultyclass = #{idFacultyclass,jdbcType=VARCHAR},
+      bug = #{bug,jdbcType=VARCHAR},
+      id_repairnumber = #{idRepairnumber,jdbcType=BIGINT},
+      id_repairname = #{idRepairname,jdbcType=VARCHAR},
+      repairtime = #{repairtime,jdbcType=TIMESTAMP},
+      is_accomplished = #{isAccomplished,jdbcType=BIT},
+      is_student = #{isStudent,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
