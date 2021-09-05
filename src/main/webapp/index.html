@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <title>北林计协|北京林业大学计算机与网络协会</title>
+    <link rel="shortcut icon" href="./images/logo.jpg" />
+    <!-- 使用font-awesome-4.7.0 -->
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+    <!-- 使用Layui -->
+    <link rel="stylesheet" href="./layui/css/layui.css" />
+    <script src="./layui/layui.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div id="header" class="layui-bg-blue">
+      <form action="" class="layui-form">
+        <label class="layui-form-label">站内搜索</label>
+        <div class="layui-input-inline">
+          <select name="modules" lay-verify="required" lay-search="">
+            <option value="">直接选择或搜索选择</option>
+            <option value="1">layer</option>
+            <option value="2">form</option>
+            <option value="3">layim</option>
+          </select>
+        </div>
+      </form>
+      <ul class="layui-nav layui-bg-blue" style="float: right">
+        <li class="layui-nav-item">
+          <a href="javascript:;">控制台</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"
+            ><img src="./images/test1.png" class="layui-nav-img" />用户1</a
+          >
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">个人信息</a></dd>
+            <dd><a href="javascript:;">退出登录</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+    <div id="side" class="layui-bg-black">
+        <div id="logo">
+            <img src="./images/logo.jpg" alt="Logo" class="layui-circle">
+            <h5>北京林业大学计算机与网络协会</h5>
+        </div>
+        <hr class="layui-border-green">
+        <ul class="layui-nav layui-nav-tree" style="width: auto;margin: 0 10px;">
+            <li class="layui-nav-item layui-this"><a href="./frames/main.html" target="content">主页</a></li>
+            <li class="layui-nav-item"><a href="https://mp.weixin.qq.com/s?__biz=MjM5NjgyNDcwNA==&mid=2651319380&idx=1&sn=4e27ae1bfaaad1aeaeaa4cd360f74ce6" target="_blank">知识科普</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">预约维修系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">常见问题</a></dd>
+                    <dd><a href="javascript:;">教职工预约通道</a></dd>
+                    <dd><a href="javascript:;">学生预约通道</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="https://mp.weixin.qq.com/s?__biz=MjM5MTE2MzgwNw==&mid=2651753352&idx=2&sn=f809d07e56ccbf10fc109578015c1e84" target="_blank">大型维修日活动</a></li>
+            <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;">联系我们</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="./frames/links.html#官方QQ群" target="content">官方QQ群</a></dd>
+                    <dd><a href="./frames/links.html#微信小程序" target="content">微信小程序</a></dd>
+                    <dd><a href="./frames/links.html#GitHub" target="content">GitHub</a></dd>
+                    <dd><a href="./frames/links.html#邮件" target="content">邮件</a></dd>
+                    <dd><a href="./frames/links.html#微信公众号" target="content">微信公众号</a></dd>
+                </dl>
+            </li>
+        </ul>
+
+    </div>
+    <div id="frames">
+      <iframe
+        name="content"
+        width="100%"
+        height="100%"
+        src="./frames/main.html"
+        scrolling="auto "
+        frameborder="0"
+      ></iframe>
+    </div>
+    <div id="footer">
+      <p>©北京林业大学计算机与网络协会</p>
+    </div>
+  </body>
+  <!-- <script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function () {
+        var element = layui.element;
+
+        //…
+    });
+
+    layui.use('form', function () {
+        var form = layui.form;
+
+    });
+</script> -->
+</html>
