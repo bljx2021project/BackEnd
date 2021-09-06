@@ -32,6 +32,20 @@ public class RepairRecord implements Serializable {
 
     private Boolean isStudent;
 
+    public RepairRecord(Integer id, Long idNumber, String idName, String idFaculty, String idFacultyclass, String bug, Long idRepairnumber, String idRepairname, Date repairtime, Boolean isAccomplished, Boolean isStudent) {
+        this.id = id;
+        this.idNumber = idNumber;
+        this.idName = idName;
+        this.idFaculty = idFaculty;
+        this.idFacultyclass = idFacultyclass;
+        this.bug = bug;
+        this.idRepairnumber = idRepairnumber;
+        this.idRepairname = idRepairname;
+        this.repairtime = repairtime;
+        this.isAccomplished = isAccomplished;
+        this.isStudent = isStudent;
+    }
+
     private static final long serialVersionUID = 1L;
 
     @Override
